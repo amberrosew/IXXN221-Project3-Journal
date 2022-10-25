@@ -1,0 +1,339 @@
+      body{
+        background-repeat: no-repeat;
+        background-size: 100%, 100%;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 25% auto;
+        grid-template-areas: 
+            "header"
+            "main";
+      }
+
+      @media (max-width:767px) {
+        body{
+          background-repeat: no-repeat;
+          background-size: 100%, 100%;
+          margin: 0;
+          padding: 0;
+          background-color: white;
+          height: 100vh;
+          width: 100vw;
+          display: grid;
+          grid-template-columns: auto;
+          grid-template-rows: 35% auto;
+          grid-template-areas: 
+              "header"
+              "main";
+        }
+
+        header {
+          grid-area: header;
+          display: grid;
+          animation-name: fadeIn;
+          animation-duration: 1s;
+          position: relative;
+          align-content: center;
+          background-color: white;
+          /* justify-content: center; */
+          grid-template-columns: 55% 38% auto;
+          grid-template-rows: auto;
+          grid-template-areas: 
+              "title dates nav";
+        }
+
+        main {
+          grid-area: main;
+          /* background-image: url('../img/backdrop_2.jpg'); */
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-color: white;
+          animation-name: fadeIn;
+          animation-duration: 1s;
+          /* animation-delay: 0.5s; */
+          position: relative;
+          text-align: left;
+          background-position: 50% 50%;
+          display: grid;
+          padding-top: 10vh;
+          grid-template-columns: 65vw auto 15vw;
+          grid-template-rows: auto;
+          grid-template-areas: 
+              "text break images";
+        }
+      }
+
+      /* .fade-in {
+        animation: fadeIn 0.5s;
+      } */
+      
+      /* @keyframes fadeIn {
+        0% {opacity: 0; left:0px; top:100px; scale:0.9;}
+        100% {opacity: 1; left:0px; top:0px; scale:1;}
+      } */
+
+      @keyframes fadeIn {
+        0% {opacity: 0; left:0px; top:100px;}
+        100% {opacity: 1; left:0px; top:0px;}
+      }
+
+      @keyframes fontColour {
+        0% {color: black}
+        50% {color: #fc35d1;}
+        100% {color: black;}
+      }
+      
+
+      header {
+        grid-area: header;
+        display: grid;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+        position: relative;
+        align-content: center;
+        background-color: white;
+        /* justify-content: center; */
+        grid-template-columns: 40% 53% auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "title dates nav";
+      }
+
+      nav:nth-of-type(1) {
+        grid-area: title;
+        padding-left: 50px;
+      }
+
+      nav:nth-of-type(2) {
+        grid-area: dates;
+        padding-top: 50px;
+      }
+
+      nav:nth-of-type(3) {
+        grid-area: nav;
+        padding-top: 50px;
+        align-content: center;
+        justify-content: center;
+      }
+      
+      main {
+        grid-area: main;
+        /* background-image: url('../img/backdrop_2.jpg'); */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: white;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+        /* animation-delay: 0.5s; */
+        position: relative;
+        text-align: left;
+        background-position: 50% 50%;
+        display: grid;
+        padding-top: 2vw;
+        grid-template-columns: 65vw auto 15vw;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "text break images";
+      }
+
+      section {
+        display: flex;
+        /* align-items: center;
+        justify-items: center; */
+      }
+
+      section:nth-of-type(1) {
+        grid-area: text;
+        display: grid;
+        padding-left: 50px;
+        flex-flow: column;
+        grid-template-rows: 50px auto 80px;
+        grid-template-columns: auto;
+        grid-template-areas: 
+          "subtitle"
+          "info"
+          "buttonplace";
+      }
+
+      .subtitle{
+        grid-area: subtitle;
+        display: flex;
+        align-items: center;
+      }
+
+      .info{
+        grid-area: info;
+        display: flex;
+        flex-flow: column;
+        margin-left: 40px;
+        margin-right: 75px;
+        /* grid-auto-flow: row; */
+        align-items: center;
+      }
+
+      .buttonplace{
+        grid-area: buttonplace;
+        display: flex;
+        align-items: center;
+      }
+
+      section:nth-of-type(2) {
+        grid-area: break;
+        flex-direction: column;
+        /* background-color: green; */
+        display: grid;
+        padding-left: 50px;
+        grid-template-rows: auto;
+        grid-template-columns: 44% auto 49%;
+        grid-template-areas: 
+          "space1 line space2";
+      }
+      .space1{
+        grid-area: space1;
+        display: flex;
+        align-items: center;
+      }
+
+      .line {
+        grid-area: line;
+        align-items: center;
+        border-left: 4px solid #fc35d1;
+        /* height: 500px; */
+        margin-top: 25px;
+        margin-bottom: 100px;
+      }
+      .space2{
+        grid-area: space2;
+        display: flex;
+        align-items: center;
+      }
+
+      section:nth-of-type(3) {
+        grid-area: images;
+        display: grid;
+        padding-right: 50px;
+        align-items: flex-end;
+        justify-items: flex-end;
+        grid-template-rows: auto 80px;
+        grid-template-columns: auto;
+        grid-template-areas: 
+          "extracontent"
+          "nextweek";
+      }
+
+      .nextweek{
+        grid-area: nextweek;
+        display: flex;
+        align-items: flex-end;
+        justify-items: flex-end;
+      }
+
+      button {
+        /* background-color: #F7BC77; */
+        text-align: left;
+        text-decoration: none;
+        background-color: white;
+        border: 5px;
+        width: 158px;
+        height: 50px;
+        padding-bottom: 70px;
+        font-weight: 200;
+        display: inline-block;
+        font-size: 32px;
+        font-family: 'Lexend', sans-serif;
+        cursor: pointer;
+        transition: 0.3s;
+        transition-timing-function: ease-in-out;
+      }
+      
+      button:hover {
+        /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
+        transition: 0.3s;
+        transition-timing-function: ease-in-out;
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05); /*rotateZ(5deg)*/
+        color: #fc35d1;
+      }
+
+      img {
+        width: 432px;
+        height: 243px;
+        background-color: white;
+      }
+
+      H1{ 
+        font-family: 'Trispace', sans-serif;
+        font-size:80px;
+        transition: 0.5s;
+        /* animation-timing-function: ease-in;
+        animation-name: fontColour;
+        animation-duration: 1.5s; */
+        /* animation-delay: 1s; */
+      }
+
+      H2{ 
+        font-family: 'Trispace', sans-serif;
+        font-size:40px;
+        transition: 0.5s;
+        font-weight: 100;
+        /* animation-timing-function: ease-in;
+        animation-name: fontColour;
+        animation-duration: 1.5s; */
+        /* animation-delay: 1s; */
+      }
+
+/* animation-timing-function: ease-in; */
+        /* animation-name: fontColour;
+        animation-duration: 0.75s; */
+
+      /* H2:hover{ 
+        scale: 1.025;
+        transition: 0.5s;
+      }
+      H1:hover{ 
+        scale: 1.025;
+        transition: 0.5s;
+      }
+
+      p:hover{ 
+        scale: 1.025;
+        transition: 0.5s;
+      } */
+
+      p{ 
+        font-family: 'Lexend', sans-serif;
+        font-size:20px;
+        font-weight: 200;
+        transition: 0.5s;
+        text-align: justify
+      }
+
+      ul {
+        font-family: 'Lexend', sans-serif;
+        font-size:20px;
+        font-weight: 200;
+        color: black;
+      }
+
+      ol {
+        font-family: 'Lexend', sans-serif;
+        font-size:20px;
+        font-weight: 200;
+        color: black;
+      }
+
+      a:link, a:visited { /* unvisited and visited link */
+        color: black;
+        text-decoration: none;
+        font-family: Helvetica, Sans-Serif; 
+      }
+      a:hover {
+          color: #fc35d1;
+          text-decoration: none;
+          font-family: Helvetica, Sans-Serif; 
+      }
